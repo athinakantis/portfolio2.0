@@ -15,6 +15,7 @@ type ProjectCardProps = {
   media?: {
     type: "video" | "img";
     src: string;
+    fallback: string;
   };
 };
 
@@ -25,16 +26,14 @@ function ProjectPreview({
 }) {
   if (!media) return <div className="w-full border-b border-border-md h-50" />;
 
-  const { type, src } = media;
+  const { type, src, fallback } = media;
   if (type === "video")
     return (
-      <video
-        src={src}
-        muted
-        autoPlay
-        loop
-        className="h-50 object-cover w-full object-top"
-      />
+      <video muted autoPlay loop className="h-50 object-cover w-full object-top">
+        <source src={src} type="video/webm" />
+        <source src={fallback} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     );
   else return <img src={src} />;
 }
@@ -54,7 +53,7 @@ export default function ProjectCard({ props, className }: { props: ProjectCardPr
       whileInView={{ filter: "blur(0px)" }}
       viewport={{ amount: 0.5 }}
     >
-      <ProjectPreview media={media}/>
+      <ProjectPreview media={media} />
 
       <div className="p-3 space-y-2 h-[calc(100%-200px)]">
         <h3 className="text-2xl font-semibold">{title}</h3>

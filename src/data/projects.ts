@@ -1,6 +1,12 @@
-import arccraftPreview from "@/assets/arccraft_1.mp4";
-import pancakePreview from "@/assets/pancakeCo.mp4";
-import harakkaPreview from "@/assets/harakka.mp4";
+// WEBM Main imports
+import arccraftPreview from "@/assets/arccraft_1.webm";
+import pancakePreview from "@/assets/pancakeCo.webm";
+import harakkaPreview from "@/assets/harakka.webm";
+ 
+// MP4 "Fallback" imports
+import arccraftPreviewMP4 from "@/assets/arccraft_1.mp4";
+import pancakePreviewMP4 from "@/assets/pancakeCo.mp4";
+import harakkaPreviewMP4 from "@/assets/harakka.mp4";
 
 type Media = "video" | "img";
 
@@ -18,6 +24,7 @@ export const projects = [
     media: {
       type: "video" as Media,
       src: harakkaPreview,
+      fallback: harakkaPreviewMP4
     },
   },
   {
@@ -31,6 +38,7 @@ export const projects = [
     media: {
       type: "video" as Media,
       src: arccraftPreview,
+      fallback: arccraftPreviewMP4,
     },
   },
   {
@@ -47,6 +55,7 @@ export const projects = [
     media: {
       type: "video" as Media,
       src: pancakePreview,
+      fallback: pancakePreviewMP4,
     },
   },
 ];

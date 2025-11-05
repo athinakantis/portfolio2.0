@@ -13,7 +13,7 @@ import {
   GraduationCap,
   Home,
   Moon,
-  SquareChartGantt,
+  // SquareChartGantt,
   Sun,
 } from "lucide-react";
 import { useTheme } from "@/theme/useTheme";
@@ -83,17 +83,17 @@ const getMenuItems: (
 
         onClick: () => scrollTo("education"),
       },
-      {
-        label: "experience",
-        icon: (props: { className?: string }) => (
-          <MotionIcon
-            Icon={SquareChartGantt}
-            className={props.className}
-            animate={activeSection === "experience" ? { scale: 1.2 } : { scale: 1 }}
-          />
-        ),
-        onClick: () => scrollTo("experience"),
-      },
+      // {
+      //   label: "experience",
+      //   icon: (props: { className?: string }) => (
+      //     <MotionIcon
+      //       Icon={SquareChartGantt}
+      //       className={props.className}
+      //       animate={activeSection === "experience" ? { scale: 1.2 } : { scale: 1 }}
+      //     />
+      //   ),
+      //   onClick: () => scrollTo("experience"),
+      // },
       {
         label: "contact",
         icon: (props: { className?: string }) => (

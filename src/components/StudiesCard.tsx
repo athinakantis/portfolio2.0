@@ -15,7 +15,8 @@ export default function StudiesCard({ props }: { props: StudiesCardProps }) {
   const { img, school, program, timespan, description, index, count } = props;
   return (
     <motion.div className="flex gap-4 relative" initial={{ filter: "blur(3px)" }} whileInView={{ filter: "blur(0px)" }} viewport={{ amount: 0.8 }}>
-      <img src={img || defaultImg} width={80} height={80} className="shrink-0 h-fit min-h-[80px] rounded-full z-2 outline-none border-1 border border-solid dark:border-none" />
+      
+      <img loading="lazy" src={img || defaultImg} width={80} height={80} className="shrink-0 h-fit min-h-[80px] rounded-full z-2 outline-none border-1 border border-solid dark:border-none" />
 
       <div>
         <h3 className="font-semibold text-lg">{`${program} - ${school}`}</h3>

@@ -1,7 +1,7 @@
 // Image imports
-import perBrahe from "@/assets/per_brahe_logga.jpg";
-import SSIS from "@/assets/SSIS.png";
-import BCH from "@/assets/BC-logo-viininpunainen.jpg";
+import perBrahe from "@/assets/per_brahe_logga.webp";
+import SSIS from "@/assets/SSIS.webp";
+import BCH from "@/assets/BC-logo-viininpunainen.webp";
 
 export const studies = [
   {

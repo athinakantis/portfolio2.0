@@ -1,4 +1,4 @@
-import profilepic from "@/assets/me.png";
+import profilepic from "@/assets/me.webp";
 import SectionHeader from "./components/SectionHeader";
 import { tech } from "./data/tech";
 import Tag from "./components/Tag";
