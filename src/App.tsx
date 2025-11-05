@@ -6,7 +6,6 @@ import { projects } from "./data/projects";
 import ProjectCard from "./components/ProjectCard";
 import Menu from "./components/MenuDock";
 import { experience } from "./data/experience";
-import ExperienceCard from "./components/ExperienceCard";
 import { studies } from "./data/studies";
 import StudiesCard from "./components/StudiesCard";
 import { useEffect, useState } from "react";
@@ -166,7 +165,7 @@ function App() {
         ))}
       </section>
 
-      {/* EXPERIENCE */}
+      {/* EXPERIENCE
       <section
         data-section="experience"
         className="space-y-8"
@@ -182,7 +181,7 @@ function App() {
             props={{ ...exp, index: index + 1, count: experience.length }}
           />
         ))}
-      </section>
+      </section> */}
 
       {/* CONTACT */}
       <section

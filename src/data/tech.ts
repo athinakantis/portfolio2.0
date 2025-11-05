@@ -3,6 +3,7 @@ export const tech = [
   "React",
   "Next.JS",
   "Nest.JS",
+  "Markdown",
   "JavaScript",
   "TypeScript",
   "Node.JS",
