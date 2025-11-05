@@ -5,7 +5,7 @@ import Tag from "./components/Tag";
 import { projects } from "./data/projects";
 import ProjectCard from "./components/ProjectCard";
 import Menu from "./components/MenuDock";
-import { experience } from "./data/experience";
+// import { experience } from "./data/experience";
 import { studies } from "./data/studies";
 import StudiesCard from "./components/StudiesCard";
 import { useEffect, useState } from "react";
@@ -160,7 +160,7 @@ function App() {
         {studies.map((exp, index) => (
           <StudiesCard
             key={`studies-${index}`}
-            props={{ ...exp, index: index + 1, count: experience.length }}
+            props={{ ...exp, index: index + 1, count: studies.length }}
           />
         ))}
       </section>

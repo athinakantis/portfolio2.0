@@ -1,4 +1,4 @@
-import defaultImg from "@/assets/studies_default.png"
+import defaultImg from "@/assets/studies_default.webp"
 import { motion } from "motion/react";
 
 type StudiesCardProps = {
