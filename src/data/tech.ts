@@ -1,0 +1,21 @@
+// List of currently known tech
+export const tech = [
+  "React",
+  "Next.JS",
+  "Nest.JS",
+  "JavaScript",
+  "TypeScript",
+  "Node.JS",
+  "Postgres",
+  "CSS",
+  "Tailwind",
+  "Figma",
+  "Photoshop",
+  "Illustrator",
+  "AWS",
+  "Jenkins",
+  "Docker",
+  "Cypress",
+  "Jest",
+  "Mocha",
+];
