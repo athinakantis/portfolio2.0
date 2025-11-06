@@ -129,10 +129,11 @@ export default function Menu({
 
 }) {
   const { handleThemeSwitch, currentTheme } = useTheme();
-  useEffect(() => {
-    // keep this for debugging — the app can remove or replace with a logger later
-    console.log("active section: ", activeSection);
-  }, [activeSection]);
+
+  // Log active section
+  // useEffect(() => {
+  //   console.log("active section: ", activeSection);
+  // }, [activeSection]);
 
   return (
     <MenuDock
