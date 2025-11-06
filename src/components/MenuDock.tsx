@@ -1,5 +1,4 @@
 import {
-  useEffect,
   type ComponentType,
   type Dispatch,
   type SetStateAction,
