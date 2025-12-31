@@ -19,7 +19,6 @@ export const projects = [
     links: {
       sourceCode:
         "https://github.com/Con2StorageOrg/FullStack_Storage_and_Booking_App",
-      livePage: "https://harakka.con2.fi",
     },
     media: {
       type: "video" as Media,

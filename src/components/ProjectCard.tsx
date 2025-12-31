@@ -10,7 +10,7 @@ type ProjectCardProps = {
   links: {
     sourceCode?: string;
     figma?: string;
-    livePage: string;
+    livePage?: string;
   };
   media?: {
     type: "video" | "img";
@@ -70,14 +70,14 @@ export default function ProjectCard({ props, className }: { props: ProjectCardPr
         </div>
 
         <div className="flex gap-2 mt-4">
-          <a
+          {livePage && <a
             href={livePage}
             target="_blank"
             className="flex gap-1 items-center text-sm py-1 px-2"
           >
             <GlobeIcon className="w-3 h-3" />
             Website
-          </a>
+          </a>}
           {sourceCode && (
             <a
               href={sourceCode}
