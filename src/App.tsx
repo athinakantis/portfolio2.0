@@ -1,4 +1,5 @@
-import profilepic from "@/assets/me.webp";
+import profilepicWebp from "@/assets/me.webp";
+import profilepicJpg from "@/assets/me.jpg"
 import SectionHeader from "./components/SectionHeader";
 import { tech } from "./data/tech";
 import Tag from "./components/Tag";
@@ -95,11 +96,15 @@ function App() {
             </p>
           </div>
 
-          <img
-            className="rounded-full md:h-full h-50 w-50 md:w-auto mx-auto"
-            src={profilepic}
-            alt=""
-          />
+          <picture>
+            <source
+              src={profilepicWebp} />
+            <img
+              className="rounded-full h-50 w-50 mx-auto min-w-50"
+              src={profilepicJpg}
+              alt=""
+            />
+          </picture>
         </motion.div>
         <motion.div
           whileInView={{ filter: "blur(0px)" }}
