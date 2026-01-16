@@ -1,6 +1,7 @@
 // List of currently known tech
 export const tech = [
   "React",
+  "Graphql",
   "Next.JS",
   "Nest.JS",
   "Redux",
