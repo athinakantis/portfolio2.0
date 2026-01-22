@@ -1,76 +1,23 @@
 import profilepicWebp from "@/assets/me.webp";
-import profilepicJpg from "@/assets/me.jpg"
-import SectionHeader from "./components/SectionHeader";
-import { tech } from "./data/tech";
-import Tag from "./components/Tag";
-import { projects } from "./data/projects";
-import ProjectCard from "./components/ProjectCard";
-import Menu from "./components/MenuDock";
-// import { experience } from "./data/experience";
-import { studies } from "./data/studies";
-import StudiesCard from "./components/StudiesCard";
-import { useEffect, useState } from "react";
+import profilepicJpg from "@/assets/me.jpg";
+import SectionHeader from "@/components/SectionHeader";
+import { tech } from "@/data/tech";
+import Tag from "@/components/Tag";
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
+// import { experience } from "@/data/experience";
+import { studies } from "@/data/studies";
+import StudiesCard from "@/components/StudiesCard";
 import { motion } from "motion/react";
 import { Github, Linkedin } from "lucide-react";
-import { CopyButton } from "./components/ui/shadcn-io/copy-button";
+import { CopyButton } from "@/components/ui/shadcn-io/copy-button";
+import { useNavigate } from "react-router-dom";
 
-function App() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-
-  // Intersection observer
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>("section[data-section]")
-    );
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find entries that are at least 50% visible.
-        entries.forEach((entry) => {
-          const section = entry.target as HTMLElement;
-          const name = section.dataset.section ?? null;
-          if (entry.intersectionRatio >= 0.5 && name) {
-            setActiveSection(name);
-          }
-        });
-      },
-      { threshold: [0.5] }
-    );
-
-    sections.forEach((s) => observer.observe(s));
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  // Scroll To Section Function - Used In Menu // MenuDock
-  function scrollTo(section: string) {
-    if (!section || typeof window === "undefined") return;
-    const el = document.querySelector<HTMLElement>(
-      `section[data-section="${section}"]`
-    );
-    if (!el) return;
-
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
+export default function Home() {
+  const navigate = useNavigate();
 
   return (
-    <main className="pb-30 px-5 lg:px-0 [&_section]:pt-25 relative">
-      {/* <div className="fixed top-0 h-30 inset-0 bg-[rgb(0_0_0_/_0)] backdrop-blur-[20px] [mask:linear-gradient(180deg,rgb(0_0_0/_1),rgb(0_0_0/_0))] z-1 content-['']"></div> */}
-
-      <Menu
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-        scrollTo={scrollTo}
-      />
-
+    <>
       {/* INTRO / HOME / ABOUT */}
       <section data-section="home">
         <motion.div
@@ -80,7 +27,7 @@ function App() {
           viewport={{ amount: 0.5 }}
         >
           <div className="flex flex-col space-y-2 text-center md:text-start">
-            <h1>Hello! I'm Athina</h1>
+            <h1 className="sm:text-[4.5rem] sm:leading-[0.8]">Athina Kantis</h1>
             <p className="text-2xl font-semibold text-balance">
               Full-Stack Developer & UX/UI Designer
             </p>
@@ -97,8 +44,7 @@ function App() {
           </div>
 
           <picture>
-            <source
-              src={profilepicWebp} />
+            <source src={profilepicWebp} />
             <img
               className="rounded-full h-50 w-50 mx-auto min-w-50"
               src={profilepicJpg}
@@ -139,8 +85,11 @@ function App() {
         >
           {projects.map((p, index) => (
             <ProjectCard
+              onClick={() =>
+                navigate(`/projects/${p.title.replaceAll(" ", "-")}`)
+              }
               key={`project-${index}`}
-              props={p}
+              project={p}
               className={
                 // If projects are an uneven number, the last project takes up two cols.
                 !(projects.length % 2 === 0) && index === projects.length - 1
@@ -203,7 +152,7 @@ function App() {
           <br /> Feel free to send me one at athina.kantis@gmail.com
           <CopyButton
             variant="secondary"
-            className="ml-1 !p-1"
+            className="ml-1 p-1!"
             aria-label="Copy email"
             content="athina.kantis@gmail.com"
           />
@@ -228,8 +177,6 @@ function App() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
-
-export default App;

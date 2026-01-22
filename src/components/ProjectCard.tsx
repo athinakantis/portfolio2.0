@@ -4,54 +4,77 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type ProjectCardProps = {
-  title: string;
-  summary: string;
-  techUsed: string[];
-  links: {
-    sourceCode?: string;
-    figma?: string;
-    livePage?: string;
+  project: {
+    title: string;
+    summary: string;
+    techUsed: string[];
+    links: {
+      sourceCode?: string;
+      figma?: string;
+      livePage?: string;
+    };
+    media?: {
+      type: "video" | "img";
+      src: string;
+      fallback: string;
+    };
   };
-  media?: {
-    type: "video" | "img";
-    src: string;
-    fallback: string;
-  };
+  className: string;
+  onClick: () => void;
 };
 
 function ProjectPreview({
   media,
 }: {
-  media: ProjectCardProps["media"];
+  media: ProjectCardProps["project"]["media"];
 }) {
   if (!media) return <div className="w-full border-b border-border-md h-50" />;
 
   const { type, src, fallback } = media;
   if (type === "video")
     return (
-      <video muted autoPlay loop className="h-50 object-cover w-full object-top">
-        <source src={src} type="video/webm" />
-        <source src={fallback} type="video/mp4" />
+      <video
+        muted
+        autoPlay
+        loop
+        className="h-50 object-cover w-full object-top"
+      >
+        <source
+          src={src}
+          type="video/webm"
+        />
+        <source
+          src={fallback}
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
     );
   else return <img src={src} />;
 }
 
-export default function ProjectCard({ props, className }: { props: ProjectCardProps, className?: string }) {
+export default function ProjectCard(props: ProjectCardProps) {
   const {
-    title,
-    summary,
-    techUsed,
-    links: { sourceCode, livePage, figma },
-    media,
+    project: {
+      title,
+      summary,
+      techUsed,
+      links: { sourceCode, livePage, figma },
+      media,
+    },
+    className,
+    onClick
   } = props;
   return (
-    <motion.div
-      className={cn("rounded-md border border-border min-w-[300px] flex-1 overflow-hidden max-w-[410px] h-full", className)}
+    <motion.button
+      className={cn(
+        "projectcard rounded-md border border-border min-w-[300px] flex-1 overflow-hidden max-w-[410px] h-full text-start hover:cursor-pointer",
+        className,
+      )}
       initial={{ filter: "blur(3px)" }}
       whileInView={{ filter: "blur(0px)" }}
       viewport={{ amount: 0.5 }}
+      onClick={onClick}
     >
       <ProjectPreview media={media} />
 
@@ -70,19 +93,23 @@ export default function ProjectCard({ props, className }: { props: ProjectCardPr
         </div>
 
         <div className="flex gap-2 mt-4">
-          {livePage && <a
-            href={livePage}
-            target="_blank"
-            className="flex gap-1 items-center text-sm py-1 px-2"
-          >
-            <GlobeIcon className="w-3 h-3" />
-            Website
-          </a>}
+          {livePage && (
+            <a
+              href={livePage}
+              target="_blank"
+              className="flex gap-1 items-center text-sm py-1 px-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <GlobeIcon className="w-3 h-3" />
+              Website
+            </a>
+          )}
           {sourceCode && (
             <a
               href={sourceCode}
               target="_blank"
               className="flex gap-1 items-center text-sm py-1 px-2"
+              onClick={(e) => e.stopPropagation()}
             >
               <Code className="w-3 h-3" />
               Source Code
@@ -93,6 +120,7 @@ export default function ProjectCard({ props, className }: { props: ProjectCardPr
               href={figma}
               target="_blank"
               className="flex gap-1 items-center text-sm py-1 px-2"
+              onClick={(e) => e.stopPropagation()}
             >
               <Figma className="w-3 h-3" />
               Design
@@ -100,6 +128,6 @@ export default function ProjectCard({ props, className }: { props: ProjectCardPr
           )}
         </div>
       </div>
-    </motion.div>
+    </motion.button>
   );
 }
