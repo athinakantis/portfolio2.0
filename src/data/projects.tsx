@@ -42,7 +42,7 @@ export const projects = [
       <>
         <section>
           <h1>Harakka</h1>
-          <p>Harakka is a web application designed for Con2, an event-organizer managing shared physical assets. I worked across UX, design, and full-stack development to create an inventory browsing and booking system, along with an admin interface for managing users, items, and bookings using role-based access control.</p>
+          <p>Harakka is a web application designed for Con2, an event-organizer managing shared physical assets. Contributed to the UX, design, and full-stack development — to create an inventory browsing and booking system, along with an admin interface for managing users, items, and bookings using role-based access control.</p>
 
           <figure>
             <img src={harakkaHome} />
