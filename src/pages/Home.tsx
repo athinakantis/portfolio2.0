@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       {/* INTRO / HOME / ABOUT */}
-      <section data-section="home">
+      <section data-section="home" id="home">
         <motion.div
           className="flex gap-4 flex-col-reverse md:flex-row"
           whileInView={{ filter: "blur(0px)" }}
@@ -71,6 +71,7 @@ export default function Home() {
 
       {/* PROJECTS */}
       <section
+        id="projects"
         data-section="projects"
         className="space-y-8"
       >
@@ -103,6 +104,7 @@ export default function Home() {
 
       {/* STUDIES */}
       <section
+        id="education"
         data-section="education"
         className="space-y-8"
       >
@@ -139,6 +141,7 @@ export default function Home() {
 
       {/* CONTACT */}
       <section
+        id="contact"
         data-section="contact"
         className="space-y-8 pb-100"
       >
