@@ -12,7 +12,6 @@ import harakkaAdminDashboard from "@/assets/harakka-admin-dashboard.webp"
 import harakkaDashboardPhone from "@/assets/harakka-dashboard-phone.webp"
 import harakkaOrgContext from "@/assets/harakka-org-switch.webp"
 import harakkaHome from "@/assets/harakka-home.webp"
-import harakkaPolicyChart from "@/assets/harakka-policy-chart.webp"
 
 import pancakeHome from "@/assets/pancakeco-home.webp"
 import pancakeHomePhone from "@/assets/pancakeco-home-phone.webp"
