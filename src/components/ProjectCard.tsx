@@ -68,13 +68,14 @@ export default function ProjectCard(props: ProjectCardProps) {
   return (
     <motion.button
       className={cn(
-        "projectcard rounded-md border border-border min-w-[300px] flex-1 overflow-hidden max-w-[410px] h-full text-start hover:cursor-pointer",
+        "projectcard rounded-md border border-border min-w-[300px] flex-1 overflow-hidden max-w-[410px] h-full text-start hover:cursor-pointer hover:bg-muted/20 transition-colors",
         className,
       )}
       initial={{ filter: "blur(3px)" }}
       whileInView={{ filter: "blur(0px)" }}
       viewport={{ amount: 0.5 }}
       onClick={onClick}
+      aria-label={`${title}. Learn more about this project.`}
     >
       <ProjectPreview media={media} />
 

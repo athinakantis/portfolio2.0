@@ -1,10 +1,15 @@
 import Menu from "@/components/MenuDock";
 import ScrollToTop from "@/components/ScrollToTop";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Outlet } from "react-router-dom";
 
-export default function Root() {
+type RootProps = {
+  children?: ReactNode;
+}
+
+export default function Root(props: RootProps) {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const { children } = props;
 
   // Intersection observer
   useEffect(() => {
@@ -58,7 +63,8 @@ export default function Root() {
       />
       <ScrollToTop />
 
-      <div className="pb-30 px-5 lg:px-0 [&_section]:pt-25 relative max-w-[800px] mx-auto">
+      <div className="pb-30 px-5 lg:px-0 [&_section]:pt-25 relative max-w-[800px] mx-auto min-h-svh">
+        {children}
         <Outlet />
       </div>
     </main>

@@ -152,6 +152,10 @@
     @apply border-border outline-ring/50;
   }
 
+  main {
+    min-height: 100svh;
+  }
+
   figcaption {
     color: var(--muted-foreground);
     font-family: "Roboto";
@@ -219,6 +223,7 @@
     font-size: var(--text-lg);
     text-decoration: underline;
     width: fit-content;
+    align-items: center;
   }
 
   .subtext {
