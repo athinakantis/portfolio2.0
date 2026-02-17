@@ -8,6 +8,7 @@ export const tech = [
   "Node.JS",
   "JavaScript",
   "TypeScript",
+  "Python",
   "Markdown",
   "Postgres",
   "CSS",
