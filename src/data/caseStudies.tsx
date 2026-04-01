@@ -12,7 +12,7 @@ const caseStudies = [
     content: (
       <>
         <section>
-          <p className="mt-2">Faceit is a matchmaking platform for some of the most popular video games - including League of Legends, CS2 and Dota2. Users can compete, earn rewards, follow their favorite professional players, earn their spot on the leaderboard and more. Faceit was established in 2012 and has more than <a href="https://corporate.faceit.com/#:~:text=FACEIT%20is%20the%20leading%20independent,more%20than%20twenty%20million%20users" target="_blank">20 million users.</a>
+          <p className="mt-2">FACEIT is a matchmaking platform for some of the most popular video games - including League of Legends, CS2 and Dota2. Users can compete, earn rewards, follow their favorite professional players, earn their spot on the leaderboard and more. FACEIT was established in 2012 and has more than 20 million users.
           </p>
 
           <picture>
@@ -23,7 +23,7 @@ const caseStudies = [
           </picture>
 
           <h3>Disclaimer</h3>
-          <p>Faceit is not a product of mine. This study is an independent, conceptual redesign for learning purposes only. I have no affiliation with the company. The outcomes of this study are purely recommendations.</p>
+          <p>FACEIT is not a product of mine. This study is an independent, conceptual redesign for learning purposes only. I have no affiliation with the company. The outcomes of this study are purely recommendations.</p>
         </section>
 
         <section>
@@ -45,7 +45,7 @@ const caseStudies = [
             <li>5. Locate where to enter a tournament</li>
           </ol>
 
-          <p>After the tasks the participants were asked about their overall confidence in Faceits navigation as well as if they had to use a search engine (other than Faceit’s own) or AI to complete any of the tasks. Finally, they were given the opportunity to express any other thoughts they had about the tasks or their experience.</p>
+          <p>After the tasks the participants were asked about their overall confidence in FACEITs navigation as well as if they had to use a search engine (other than FACEIT’s own) or AI to complete any of the tasks. Finally, they were given the opportunity to express any other thoughts they had about the tasks or their experience.</p>
         </section>
 
         <section>
@@ -134,7 +134,7 @@ const caseStudies = [
               <h3>Finding #3: Users report lower confidence in navigation</h3>
 
               <div>
-                <p>42.9% of participants reported medium to low confidence in Faceit’s navigation.</p>
+                <p>42.9% of participants reported medium to low confidence in FACEIT’s navigation.</p>
                 <p>This suggests that even when users are able to complete tasks, they may not feel certain about where to find features or how the system is structured.</p>
                 <p>One user reported “there are buttons everywhere like ants and I don't know exactly what they do or where they take me” which suggests that the UI is cluttered.</p>
                 <p>Lower confidence can lead to slower interactions, increased reliance on trial and error, and reduced overall satisfaction.</p>
@@ -184,7 +184,7 @@ const caseStudies = [
       </>
     ),
     previewImg: (
-      <figure className="min-w-30 flex bg-[#141616]">
+      <figure className="min-w-30 flex dark:bg-[#141616] bg-[#EBEFF3] border-r">
         <img src={faceitPreview} className="w-15 m-auto" />
       </figure>
     ),
