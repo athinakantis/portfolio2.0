@@ -58,6 +58,7 @@
   --color-muted-bg-md: #b6b6b6ff;
   --color-outline: var(--outline);
   --subtle-border: #c5c5c5;
+  --font-roboto: "Roboto";
 }
 
 @media (prefers-color-scheme: light) {
