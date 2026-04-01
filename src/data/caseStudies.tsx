@@ -28,7 +28,7 @@ const caseStudies = [
 
         <section>
           <h2>About the study</h2>
-          <p>This study focuses on the navigation of the site; such as accessing game features, legal content and support. It was completed using a survey answered by fourteen participants, all of which were active users of the app.</p>
+          <p>This study focuses on the navigation of the site; such as accessing game features, legal content and support. It was completed using a survey answered by fourteen participants.</p>
         </section>
 
         <section>
@@ -56,7 +56,7 @@ const caseStudies = [
             {/* Finding 1 */}
             <li className="dark:[&_li]:text-muted-foreground [&_div]:mb-6 [&_p,ol,ul]:mb-2 [&_ul,ol]:ml-4">
               <h3>
-                Support and ticket submission are difficult to locate
+                Finding #1: Support and ticket submission are difficult to locate
               </h3>
 
               <div>
@@ -99,7 +99,7 @@ const caseStudies = [
 
             {/* Finding 2 */}
             <li className="dark:[&_li]:text-muted-foreground [&_div]:mb-6 [&_p,ol,ul]:mb-2 [&_ul,ol]:ml-4">
-              <h3>Cookie settings and privacy policy are not intuitive to locate</h3>
+              <h3>Finding #2: Cookie settings and privacy policy are not intuitive to locate</h3>
 
               <div>
                 <p>Locating the cookie settings and privacy policy produced mixed results. Around one third of participants reported some or significant difficulty completing this task.</p>
@@ -131,7 +131,7 @@ const caseStudies = [
 
             {/* Finding 3 */}
             <li className="dark:[&_li]:text-muted-foreground [&_div]:mb-6 [&_p,ol,ul]:mb-2 [&_ul,ol]:ml-4">
-              <h3>Users report lower confidence in navigation</h3>
+              <h3>Finding #3: Users report lower confidence in navigation</h3>
 
               <div>
                 <p>42.9% of participants reported medium to low confidence in Faceit’s navigation.</p>
