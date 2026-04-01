@@ -116,7 +116,6 @@ export const projects = [
 
           <picture>
             <source srcSet={arccraftHomePhone} media="(width < 600px)" className="mx-auto" type="image/webp" />
-            <source srcSet={arccraftHomePhone} media="(width < 600px)" className="mx-auto" type="image/webp" />
             <img src={arccraftHome} className="mx-auto" />
           </picture>
         </section>

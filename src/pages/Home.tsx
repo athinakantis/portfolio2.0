@@ -12,6 +12,8 @@ import { motion } from "motion/react";
 import { Github, Linkedin } from "lucide-react";
 import { CopyButton } from "@/components/ui/shadcn-io/copy-button";
 import { useNavigate } from "react-router-dom";
+import caseStudies from "@/data/caseStudies";
+import CaseStudyCard from "@/components/CaseStudyCard";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -77,7 +79,7 @@ export default function Home() {
       >
         <SectionHeader
           tag="projects"
-          title="Projects and Work"
+          title="Work & Case Studies"
         />
 
         <div
@@ -99,6 +101,11 @@ export default function Home() {
               }
             />
           ))}
+        </div>
+
+        <div className="mt-20 text-center">
+          <h3 className="text-3xl mb-2 font-semibold">Case Studies</h3>
+          {caseStudies.map(cs => <CaseStudyCard study={cs} />)}
         </div>
       </section>
 

@@ -98,7 +98,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             <a
               href={livePage}
               target="_blank"
-              className="flex gap-1 items-center text-sm py-1 px-2"
+              className="flex gap-1 items-center text-sm py-1 px-2 link"
               onClick={(e) => e.stopPropagation()}
             >
               <GlobeIcon className="w-3 h-3" />
@@ -109,7 +109,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             <a
               href={sourceCode}
               target="_blank"
-              className="flex gap-1 items-center text-sm py-1 px-2"
+              className="flex gap-1 items-center text-sm py-1 px-2 link"
               onClick={(e) => e.stopPropagation()}
             >
               <Code className="w-3 h-3" />
@@ -120,7 +120,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             <a
               href={figma}
               target="_blank"
-              className="flex gap-1 items-center text-sm py-1 px-2"
+              className="flex gap-1 items-center text-sm py-1 px-2 link"
               onClick={(e) => e.stopPropagation()}
             >
               <Figma className="w-3 h-3" />

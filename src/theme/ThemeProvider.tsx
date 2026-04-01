@@ -5,9 +5,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [currentTheme, setCurrentTheme] = useState<Theme>(localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)") ? 'dark' : 'light'))
 
   const handleThemeSwitch = () => {
-    console.log(`theme switch was called`);
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    console.log('newTheme:', newTheme);
     setCurrentTheme(newTheme);
     localStorage.setItem('theme', newTheme);
   };
