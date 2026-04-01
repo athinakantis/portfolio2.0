@@ -1,4 +1,5 @@
 import Root from "@/layout/Root";
+import CaseStudy from "@/pages/CaseStudy";
 import Error from "@/pages/Error";
 import Home from "@/pages/Home";
 import Project from "@/pages/Project";
@@ -14,6 +15,10 @@ const router = createBrowserRouter([{
   }, {
     path: "/projects/:projectName",
     element: <Project />
+  },
+  {
+    path: "/study/:studyId",
+    element: <CaseStudy />
   }]
 }])
 
