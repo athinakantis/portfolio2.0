@@ -188,7 +188,8 @@ const caseStudies = [
         <img src={faceitPreview} className="w-15 m-auto" />
       </figure>
     ),
-    description: "This study examines navigation and discoverability in competitive esports matchmaking platform FACEIT, identifying areas where users experience friction when locating important features and information."
+    description: "This study examines navigation and discoverability in competitive esports matchmaking platform FACEIT, identifying areas where users experience friction when locating important features and information.",
+    published: new Date("2026-04-01")
   },
 ]
 
