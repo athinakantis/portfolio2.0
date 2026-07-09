@@ -16,7 +16,7 @@ export default function TableOfContents({ links }: TableOfContentsProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed lg:top-20 bg-background p-4 border rounded-md transform-[translateX(calc(-100%-48px))] max-w-55 w-full z-10"
+      className="hidden xl:block fixed lg:top-20 bg-background p-4 border rounded-md transform-[translateX(calc(-100%-48px))] max-w-55 w-full z-10"
     >
       <h2 className="text-2xl">On This Page</h2>
       <ul className="flex flex-col text-sm gap-px">
