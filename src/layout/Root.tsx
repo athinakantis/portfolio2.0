@@ -1,15 +1,19 @@
 import Menu from "@/components/MenuDock";
 import ScrollToTop from "@/components/ScrollToTop";
+import TableOfContents from "@/components/TableOfContents";
+import { useToc } from "@/context/UI/useToc";
+import { AnimatePresence } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Outlet } from "react-router-dom";
 
 type RootProps = {
   children?: ReactNode;
-}
+};
 
 export default function Root(props: RootProps) {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const { children } = props;
+  const { visible, links } = useToc();
 
   // Intersection observer
   useEffect(() => {
@@ -54,6 +58,7 @@ export default function Root(props: RootProps) {
       block: "start",
     });
   }
+
   return (
     <main>
       <Menu
@@ -63,7 +68,10 @@ export default function Root(props: RootProps) {
       />
       <ScrollToTop />
 
-      <div className="pb-30 px-5 lg:px-0 [&_section]:pt-25 relative max-w-[800px] mx-auto min-h-svh">
+      <div className="px-5 lg:px-0 [&_section]:pt-25 relative max-w-[800px] mx-auto min-h-svh">
+        <AnimatePresence>
+          {visible && links.length > 0 && <TableOfContents links={links} />}
+        </AnimatePresence>
         {children}
         <Outlet />
       </div>

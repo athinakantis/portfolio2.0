@@ -19,9 +19,12 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="lg:border-x px-4 lg:px-6">
       {/* INTRO / HOME / ABOUT */}
-      <section data-section="home" id="home">
+      <section
+        data-section="home"
+        id="home"
+      >
         <motion.div
           className="flex gap-4 flex-col-reverse md:flex-row"
           whileInView={{ filter: "blur(0px)" }}
@@ -105,7 +108,9 @@ export default function Home() {
 
         <div className="mt-20 text-center">
           <h3 className="text-3xl mb-2 font-semibold">Case Studies</h3>
-          {caseStudies.map(cs => <CaseStudyCard study={cs} />)}
+          {caseStudies.map((cs) => (
+            <CaseStudyCard study={cs} />
+          ))}
         </div>
       </section>
 
@@ -187,6 +192,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

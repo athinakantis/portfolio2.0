@@ -19,6 +19,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -153,6 +154,11 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
   main {
     min-height: 100svh;
   }
@@ -238,5 +244,18 @@
     &:hover {
       background-color: var(--border);
     }
+  }
+}
+
+@layer animations {
+  .animate-fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+  }
+
+  @keyframes fadeIn {
+    to {opacity: 1}
   }
 }
