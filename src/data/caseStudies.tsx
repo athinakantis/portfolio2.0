@@ -404,7 +404,7 @@ const caseStudies = [
       </>
     ),
     previewImg: (
-      <figure className="min-w-30 flex dark:bg-[#141616] bg-[#EBEFF3] border-r">
+      <figure className="min-w-30 flex dark:bg-zinc-900 bg-zinc-200 border-r">
         <img
           src={faceitPreview}
           className="w-15 m-auto"
