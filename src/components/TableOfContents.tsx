@@ -13,10 +13,10 @@ type TableOfContentsProps = {
 };
 
 export default function TableOfContents({ links }: TableOfContentsProps) {
-  const { isMobile } = useIsMobile();
+  const { isMobile, isTablet } = useIsMobile();
   const [showMore, setShowMore] = useState(false);
 
-  if (isMobile)
+  if (isMobile || isTablet)
     return (
       <motion.div
         initial={{ opacity: 0 }}
