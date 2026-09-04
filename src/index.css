@@ -184,7 +184,11 @@
     text-decoration: underline;
     color: var(--color-foreground);
   }
-  
+
+  b {
+    font-weight: 600;
+  }
+
   body {
     margin: 0;
     min-width: 320px;
@@ -216,6 +220,42 @@
 
   :is(h1, h2) {
     letter-spacing: -1.44px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  tr,
+  td {
+    text-align: start;
+  }
+
+  td,
+  th {
+    border-collapse: collapse;
+    border: 1px solid var(--color-border);
+    padding: 5px 30px 5px 10px;
+  }
+
+  th:first-of-type,
+  td:first-of-type {
+    border-top: none;
+  }
+
+  td {
+    border-right: none;
+    width: 100%;
+  }
+
+  th {
+    border-left: none;
+    padding-left: 0;
+    min-width: 120px;
+  }
+
+  tr:last-of-type :is(th, td) {
+    border-bottom: none;
   }
 }
 
@@ -256,10 +296,11 @@
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-
   }
 
   @keyframes fadeIn {
-    to {opacity: 1}
+    to {
+      opacity: 1;
+    }
   }
 }

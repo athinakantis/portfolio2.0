@@ -12,6 +12,9 @@ import harakkaAdminDashboard from "@/assets/harakka-admin-dashboard.webp";
 import harakkaDashboardPhone from "@/assets/harakka-dashboard-phone.webp";
 import harakkaOrgContext from "@/assets/harakka-org-switch.webp";
 import harakkaHome from "@/assets/harakka-home.webp";
+import harakkaHeaderBefore from "@/assets/harakka-header-before.png";
+import responsiveTableAfter from "@/assets/responsive-table-after.png";
+import responsiveTableBefore from "@/assets/responsive-table-before.png";
 
 import pancakeHome from "@/assets/pancakeco-home.webp";
 import pancakeHomePhone from "@/assets/pancakeco-home-phone.webp";
@@ -66,7 +69,10 @@ export const projects = [
           </p>
 
           <figure>
-            <img src={harakkaHome} />
+            <img
+              alt=""
+              src={harakkaHome}
+            />
             <figcaption>
               Harakka’s home page. I sourced the hero image myself from a member
               of the Finnish LARP community, making it both authentic while also
@@ -74,10 +80,50 @@ export const projects = [
             </figcaption>
           </figure>
 
+          <h2>Tech Stack</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th>Design</th>
+                <td>Figma, Adobe Illustrator, Adobe Photoshop</td>
+              </tr>
+              <tr>
+                <th>Front-end</th>
+                <td>React, TailwindCSS, Redux</td>
+              </tr>
+              <tr>
+                <th>Back-end</th>
+                <td>NestJS</td>
+              </tr>
+              <tr>
+                <th>Data</th>
+                <td>Supabase, PostgreSQL</td>
+              </tr>
+            </tbody>
+          </table>
+          {/* <div className="flex flex-col md:flex-row items-center">
+            <div className="flex flex-col text-center bg-muted p-4 rounded-sm grow">
+              <b>Client</b>
+              React, TailwindCSS
+            </div>
+            <Separator className="relative max-w-5 max-h-5" />
+            <div className="flex flex-col text-center bg-muted p-4 rounded-sm grow">
+              <b>Application</b>
+              NestJS
+            </div>
+            <Separator className="relative max-w-5 max-h-5" />
+
+            <div className="flex flex-col text-center bg-muted p-4 rounded-sm grow">
+              <b>Data</b>
+              supabase
+            </div>
+          </div> */}
+
+          <h2>Multi-Tenancy Shift</h2>
           <p>
             During this project, we faced several challenges. One of the most
             significant was introducing multi-tenancy to the application.
-            Originally, the app was planned for use by a single organization,
+            Originally, the app was intended for use by a single organization,
             but this changed a few months into the project, after many systems
             were already in place.
           </p>
@@ -110,8 +156,31 @@ export const projects = [
           </p>
 
           <p>
-            We chose the latter approach. To make this experience clear and
-            user-friendly, we introduced a few key design changes:
+            For the sake of clarity, we chose the latter approach. Initially we
+            added this functionality without much consideration for user
+            expectations. What we ended up feeling ourselves was that this
+            navigation was cluttered and overwhelming.
+          </p>
+
+          <figure>
+            <img
+              src={harakkaHeaderBefore}
+              alt="Screenshot of the old website header."
+            />
+            <figcaption>
+              A breakdown of the old header showing many options in a small
+              space - including language settings, notification, cart, user
+              profile, log out button and the newly added organization context.
+            </figcaption>
+          </figure>
+
+          <p>
+            I took it upon myself to review the current design and identify how
+            we could reduce any cognitive load. I began by grouping items by
+            expected usage. I wanted to follow the common pattern of keeping
+            both cart and notifications easily accessible in the navigation. I
+            also made the decision to group user-related items like changing
+            organization and log out under a user menu.
           </p>
 
           <ul>
@@ -156,6 +225,54 @@ export const projects = [
               A screenshot of the Harakka admin dashboard
             </figcaption>
           </figure>
+        </section>
+
+        <section id="responsiveness">
+          <h2>Responsiveness</h2>
+
+          <p>
+            As I was reviewing the responsiveness of the site one thing became
+            clear: The tables were not mobile-friendly. The scrolling was
+            awkward, and it was hard to keep track of what row and column you
+            were really on. I began by doing research and asking the questions.{" "}
+            <b>
+              What alternatives exist? How have other people approached the same
+              problem?
+            </b>
+          </p>
+
+          <p>
+            One option I discovered was that of a card design. Each row in the
+            table becomes a card, which displays the table header and row
+            content in a horizontal format. The option was pitched to the team
+            and a prototype was made.
+          </p>
+
+          <div className="flex justify-between">
+            <img
+              src={responsiveTableBefore}
+              alt="A screenshot of the original design, where table content would overflow horizontally."
+            />
+            <img
+              src={responsiveTableAfter}
+              alt="A screenshot of the updated design using the Card approach. Each table row presents as a card component, making content easier to read."
+            />
+          </div>
+
+          <h3>Tradeoffs</h3>
+          <p>
+            The original design was overall more compact but had reduced
+            readability. As a team we ruled in favor of readability and clarity
+            and implemented the solution across the app.
+          </p>
+
+          <p>
+            Although we unfortunately did not have the resources to confirm
+            whether or whether not this approach was an improvement, it was
+            received well by both the product owners as well as the community.
+            Ideally, user research would have been conducted througout the apps
+            development.
+          </p>
         </section>
 
         <section id="reflection">
