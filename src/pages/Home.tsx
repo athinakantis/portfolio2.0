@@ -9,7 +9,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { studies } from "@/data/studies";
 import StudiesCard from "@/components/StudiesCard";
 import { motion } from "motion/react";
-import { Github, Linkedin } from "lucide-react";
+import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { CopyButton } from "@/components/ui/shadcn-io/copy-button";
 import { useNavigate } from "react-router-dom";
 import caseStudies from "@/data/caseStudies";
@@ -46,6 +46,11 @@ export default function Home() {
               accessible, and visually appealing — and I love learning new
               technologies that help me do just that.
             </p>
+            <button
+              onClick={() => navigate("/gallery")}
+              className="flex gap-2 border border-border w-fit rounded-full">
+              Explore Creative Work <ArrowRight />
+            </button>
           </div>
 
           <picture>
